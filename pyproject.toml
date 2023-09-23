@@ -11,7 +11,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-app = "app:main"
+app = "imagerator.app:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -46,7 +46,7 @@ pylint = "^2.17.5"
 [tool.poe.tasks]
 _black = 'black imagerator tests nbs'
 _isort = 'isort imagerator tests nbs --float-to-top'
-_autoflake = 'autoflake --in-place --remove-all-unused-imports --remove-unused-variables --recursive imagerator tests nbs'
+_autoflake = 'autoflake --in-place --remove-all-unused-imports --recursive imagerator tests nbs'
 _pylint = "pylint imagerator tests nbs"
 _gradio = "gradio app.py"
 

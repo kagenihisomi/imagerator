@@ -1,12 +1,7 @@
-import random
 import gradio as gr
-
 from PIL import Image
-from imagerator.utils import (
-    generate_image_sections,
-    get_example_sections,
-    image_from_mask,
-)
+
+from imagerator.utils import generate_image_sections, image_from_mask
 
 
 def select_section(evt: gr.SelectData, imgs: gr.AnnotatedImage) -> Image.Image:
@@ -27,7 +22,6 @@ def select_section(evt: gr.SelectData, imgs: gr.AnnotatedImage) -> Image.Image:
 
     section = img_path_masks[evt.index]
     img_path_mask = section[0]
-    img_label = section[1]
 
     img_original = Image.open(img_path_original["name"])
     img_mask = Image.open(img_path_mask["name"])
